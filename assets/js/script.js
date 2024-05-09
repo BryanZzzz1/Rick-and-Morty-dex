@@ -69,7 +69,10 @@ const createCards = (results=[] )=>{
 
         divCol.appendChild(card);
 
-        divCol.appendChild(btnVer);
+        divCol
+        
+        
+        card.appendChild(btnVer);
         personajesRow.appendChild(divCol);
     });
 }
