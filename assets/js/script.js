@@ -13,7 +13,7 @@ const createCards = (results=[] )=>{
     const personajesRow = document.getElementById("personajesRow");
 
     results.map((result)=>{
-        const {id ,name, species,status,location, image:imagen} = result;
+        const {id ,name, species,status,location,gender, image:imagen} = result;
         const {name: locationName} = location;
 
         const divCol = document.createElement("div");
@@ -43,10 +43,26 @@ const createCards = (results=[] )=>{
         subtitle.classList.add("text-title");
         subtitle.textContent = `Especie: ${species}`;
 
+
+
         const subtitle2 = document.createElement("p");
         subtitle2.classList.add("text-title");
         subtitle2.textContent = `Estado: ${status}`;
 
+        const subtitle3 = document.createElement("p");
+        subtitle3.classList.add("text-title");
+        subtitle3.textContent = `ubicacion: ${locationName}`;
+
+        const subtitle4 = document.createElement("p");
+        subtitle4.classList.add("text-title");
+        subtitle4.textContent = `id del personaje: ${id}`;
+
+        const subtitle5 = document.createElement("p");
+        subtitle5.classList.add("text-title");
+        subtitle5.textContent = `genero: ${gender}`;
+
+
+        
         const btnVer = document.createElement("button");
         btnVer.classList.add("btn");
         btnVer.classList.add("btn-warning");
@@ -63,15 +79,14 @@ const createCards = (results=[] )=>{
         divBody.appendChild(title);
         divBody.appendChild(subtitle);
         divBody.appendChild(subtitle2);
+        divBody.appendChild(subtitle3);
+        divBody.appendChild(subtitle4);
+        divBody.appendChild(subtitle5);
 
         card.appendChild(img);
         card.appendChild(divBody);
 
-        divCol.appendChild(card);
-
-        divCol
-        
-        
+        divCol.appendChild(card);        
         card.appendChild(btnVer);
         personajesRow.appendChild(divCol);
     });
